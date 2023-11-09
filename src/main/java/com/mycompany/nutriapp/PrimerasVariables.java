@@ -155,7 +155,7 @@ jLabel9.setText(fechaFormateada);
         }
         setGenero(generoSeleccionado);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String fechaSeleccionada = dateFormat.format(fechanaci.getDate());
+        String fechaSeleccionada = dateFormat.format(jDateChooser2.getDate());
         setFechaNaci(fechaSeleccionada);
         String uniEducaSeleccionada = SelUnidad.getSelectedItem().toString();
         setUniEduca(uniEducaSeleccionada);
@@ -221,15 +221,16 @@ jLabel9.setText(fechaFormateada);
         txtgenero = new javax.swing.JLabel();
         txtedad = new javax.swing.JLabel();
         txtnaci = new javax.swing.JLabel();
-        edad = new javax.swing.JLabel();
+        edad2 = new javax.swing.JLabel();
         txtaltura = new javax.swing.JLabel();
         Dpeso = new javax.swing.JSpinner();
         Daltura = new javax.swing.JSpinner();
         Bmasc = new javax.swing.JRadioButton();
         Bfem = new javax.swing.JRadioButton();
-        fechanaci = new com.toedter.calendar.JDateChooser();
         bmidat = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        fechanaci = new javax.swing.JLabel();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel3 = new javax.swing.JLabel();
         Presul = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -297,7 +298,7 @@ jLabel9.setText(fechaFormateada);
         txtnaci.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtnaci.setText("Fecha de nacimiento:");
         Pinfgene.add(txtnaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-        Pinfgene.add(edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 190, 20));
+        Pinfgene.add(edad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 190, 20));
 
         txtaltura.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         txtaltura.setText("Alutra (cm):");
@@ -321,17 +322,12 @@ jLabel9.setText(fechaFormateada);
         grupogen.add(Bfem);
         Bfem.setText("Femenino");
         Pinfgene.add(Bfem, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, -1));
-
-        fechanaci.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                fechanaciPropertyChange(evt);
-            }
-        });
-        Pinfgene.add(fechanaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 140, -1));
         Pinfgene.add(bmidat, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 50, 20));
 
         jLabel14.setText("BMI");
         Pinfgene.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
+        Pinfgene.add(fechanaci, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 160, 20));
+        Pinfgene.add(jDateChooser2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 160, -1));
 
         jPanel1.add(Pinfgene, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 330, 180));
 
@@ -666,7 +662,7 @@ jLabel9.setText(fechaFormateada);
 
     private void fechanaciPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_fechanaciPropertyChange
         try {
-            edad.setText(edad(fechanaci.getDate()));
+           edad2.setText(edad(jDateChooser2.getDate()));
         } catch (Exception e) {
         }
     }//GEN-LAST:event_fechanaciPropertyChange
@@ -681,7 +677,7 @@ jLabel9.setText(fechaFormateada);
        
     anitos = (ana * 12) + mess;
 
-//bmidat.setText(String.valueOf(anitos));
+    edad2.setText(edad(jDateChooser2.getDate()));
 
 String[] registros = new String[50];
 if (Bfem.isSelected()) {
@@ -791,7 +787,7 @@ String sql = "SELECT * FROM Percentiles2 WHERE Mes LIKE '%" + anitos + "%' AND G
     }
     
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String fechaSeleccionada = dateFormat.format(fechanaci.getDate());
+        String fechaSeleccionada = dateFormat.format(jDateChooser2.getDate());
 
         
 
@@ -906,11 +902,12 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private javax.swing.JComboBox<String> Selparal;
     private javax.swing.JLabel bmidat;
     private javax.swing.JPanel cerrarbotn;
-    private javax.swing.JLabel edad;
+    private javax.swing.JLabel edad2;
     private javax.swing.JLabel exit;
-    private com.toedter.calendar.JDateChooser fechanaci;
+    private javax.swing.JLabel fechanaci;
     private javax.swing.ButtonGroup grupogen;
     private javax.swing.ButtonGroup gruporesiden;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
