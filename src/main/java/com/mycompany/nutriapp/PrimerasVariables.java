@@ -5,6 +5,7 @@
 package com.mycompany.nutriapp;
 //Libreriass
 import Clases.CConexion;
+import Entidades.Cantones;
 import java.awt.Color;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -28,6 +29,7 @@ import javax.swing.JRadioButton;
 import java.util.Date;
 import javax.swing.JComboBox;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import javax.swing.*;
 import java.util.Enumeration;
 
@@ -66,6 +68,7 @@ public class PrimerasVariables extends javax.swing.JFrame {
     public PrimerasVariables() {
         
         initComponents();
+        llenarAlausi();
         BMISL.setText(String.valueOf(SLBMI.getValue())); 
         // Obtener la fecha actual
 Date fechaActual = new Date();
@@ -77,6 +80,19 @@ String fechaFormateada = formatoFecha.format(fechaActual);
 // Mostrar la fecha en el JLabel
 jLabel9.setText(fechaFormateada);
 
+    }
+    
+    private void llenarAlausi()
+    {
+        InstiAlausi modAlausi = new InstiAlausi();
+        ArrayList <Cantones> listaAlausi = modAlausi.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaAlausi.size(); i++)
+        {
+            SelUnidad.addItem(listaAlausi.get(i).getNombre_institucion());
+        }
     }
     
     public String getNombrePaciente() {
