@@ -70,6 +70,15 @@ public class PrimerasVariables extends javax.swing.JFrame {
         
         initComponents();
         llenarAlausi();
+        llenarChambo();
+        llenarChunchi();
+        llenarColta();
+        llenarCumanda();
+        llenarGuamote();
+        llenarGuano();
+        llenarPallatanga();
+        llenarPenipe();
+        llenarRiobamba();
         BMISL.setText(String.valueOf(SLBMI.getValue())); 
         // Obtener la fecha actual
 Date fechaActual = new Date();
@@ -93,6 +102,123 @@ jLabel9.setText(fechaFormateada);
         for(int i = 0; i < listaAlausi.size(); i++)
         {
             SelUnidad.addItem(listaAlausi.get(i).getNombre_institucion());
+        }
+    }
+    
+     private void llenarChambo()
+    {
+        InstiChambo modChambo = new InstiChambo();
+        ArrayList <Cantones> listaChambo = modChambo.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaChambo.size(); i++)
+        {
+            SelUnidad.addItem(listaChambo.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarChunchi()
+    {
+        InstiChunchi modChunchi = new InstiChunchi();
+        ArrayList <Cantones> listaChunchi = modChunchi.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaChunchi.size(); i++)
+        {
+            SelUnidad.addItem(listaChunchi.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarColta()
+    {
+        InstiColta modColta = new InstiColta();
+        ArrayList <Cantones> listaColta = modColta.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaColta.size(); i++)
+        {
+            SelUnidad.addItem(listaColta.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarCumanda()
+    {
+        InstiCumanda modCumanda = new InstiCumanda();
+        ArrayList <Cantones> listaCumanda = modCumanda.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaCumanda.size(); i++)
+        {
+            SelUnidad.addItem(listaCumanda.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarGuamote()
+    {
+        InstiGuamote modGuamote = new InstiGuamote();
+        ArrayList <Cantones> listaGuamote = modGuamote.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaGuamote.size(); i++)
+        {
+            SelUnidad.addItem(listaGuamote.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarGuano()
+    {
+        InstiGuano modGuano = new InstiGuano();
+        ArrayList <Cantones> listaGuano = modGuano.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaGuano.size(); i++)
+        {
+            SelUnidad.addItem(listaGuano.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarPallatanga()
+    {
+        InstiPallatanga modPallatanga = new InstiPallatanga();
+        ArrayList <Cantones> listaPallatanga = modPallatanga.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaPallatanga.size(); i++)
+        {
+            SelUnidad.addItem(listaPallatanga.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarPenipe()
+    {
+        InstiPenipe modPenipe = new InstiPenipe();
+        ArrayList <Cantones> listaPenipe = modPenipe.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaPenipe.size(); i++)
+        {
+            SelUnidad.addItem(listaPenipe.get(i).getNombre_institucion());
+        }
+    }
+     
+     private void llenarRiobamba()
+    {
+        InstiRiobamba modRiobamba = new InstiRiobamba();
+        ArrayList <Cantones> listaRiobamba = modRiobamba.getCantones();
+        
+        SelUnidad.removeAllItems();
+        
+        for(int i = 0; i < listaRiobamba.size(); i++)
+        {
+            SelUnidad.addItem(listaRiobamba.get(i).getNombre_institucion());
         }
     }
     
@@ -214,7 +340,7 @@ jLabel9.setText(fechaFormateada);
             
             cs.execute();
             
-            JOptionPane.showMessageDialog(null,"Se ha registrado correctamente, inicie sesión");
+            JOptionPane.showMessageDialog(null,"Se han guardado los datos con éxito");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"A ocurrido iun error"+e.toString());
 
@@ -254,6 +380,7 @@ jLabel9.setText(fechaFormateada);
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jSlider1 = new javax.swing.JSlider();
         SLBMI = new javax.swing.JSlider();
         jSlider3 = new javax.swing.JSlider();
@@ -261,6 +388,8 @@ jLabel9.setText(fechaFormateada);
         jLabel5 = new javax.swing.JLabel();
         BMISL = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        ProxCita = new javax.swing.JPanel();
+        CitaProx = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -373,15 +502,24 @@ jLabel9.setText(fechaFormateada);
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("RomanD", 0, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Calcular");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 104, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
         );
 
         Presul.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
@@ -409,7 +547,38 @@ jLabel9.setText(fechaFormateada);
         jLabel10.setText("jLabel5");
         Presul.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
-        jPanel1.add(Presul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 770, 190));
+        ProxCita.setToolTipText("");
+        ProxCita.setName(""); // NOI18N
+        ProxCita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProxCitaMouseClicked(evt);
+            }
+        });
+
+        CitaProx.setFont(new java.awt.Font("RomanD", 0, 14)); // NOI18N
+        CitaProx.setText(" Programar Cita");
+        CitaProx.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CitaProxMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ProxCitaLayout = new javax.swing.GroupLayout(ProxCita);
+        ProxCita.setLayout(ProxCitaLayout);
+        ProxCitaLayout.setHorizontalGroup(
+            ProxCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProxCitaLayout.createSequentialGroup()
+                .addComponent(CitaProx, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        ProxCitaLayout.setVerticalGroup(
+            ProxCitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CitaProx, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        Presul.add(ProxCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, 40));
+
+        jPanel1.add(Presul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 790, 190));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -696,7 +865,76 @@ jLabel9.setText(fechaFormateada);
     }//GEN-LAST:event_fechanaciPropertyChange
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        float altura=0,peso=0;
+        
+    }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void INnombreapeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INnombreapeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_INnombreapeActionPerformed
+
+    private void BurbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurbanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BurbanaActionPerformed
+
+    private void jSectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSectorMouseClicked
+sector = jSector.getSelectedIndex();
+
+        if (sector==0){
+            llenarAlausi();
+        }
+
+        if (sector==1){
+            llenarChambo();
+        }
+
+        if (sector==2){
+            llenarChunchi();
+        }
+
+        if (sector==3){
+            llenarColta();
+        }
+
+        if (sector==4){
+            llenarCumanda();
+        }
+
+        if (sector==5){
+            llenarGuamote();
+        }
+
+        if (sector==6){
+            llenarGuano();
+        }
+
+        if (sector==7){
+            llenarPallatanga();
+        }
+
+        if (sector==8){
+            llenarPenipe();
+        }
+
+        if (sector==9){
+            llenarRiobamba();
+        }
+    }//GEN-LAST:event_jSectorMouseClicked
+
+    private void SelUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelUnidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SelUnidadActionPerformed
+
+    private void ProxCitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProxCitaMouseClicked
+
+    }//GEN-LAST:event_ProxCitaMouseClicked
+
+    private void CitaProxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CitaProxMouseClicked
+        ProximaCita objetocit= new ProximaCita();
+        objetocit.setVisible(true);
+    }//GEN-LAST:event_CitaProxMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+float altura=0,peso=0;
         altura = (float) Daltura.getValue();
         peso = (float) Dpeso.getValue();
         float BMI = (peso)/((altura*altura)/10000);
@@ -838,278 +1076,7 @@ String sql = "SELECT * FROM Percentiles2 WHERE Mes LIKE '%" + anitos + "%' AND G
 // Formatear la fecha en el formato deseado
         SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         String fechaFormateada = formatoFecha.format(fechaActual);
-InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,SelUnidad,Selgrado,Selparal,residenciaSeleccionada,fechaFormateada);
-    }//GEN-LAST:event_jPanel2MouseClicked
-
-    private void INnombreapeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INnombreapeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_INnombreapeActionPerformed
-
-    private void BurbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurbanaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BurbanaActionPerformed
-
-    private void jSectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSectorMouseClicked
-
-        sector = jSector.getSelectedIndex();
-
-        if (sector==0){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA NIZAG INDIGENA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGUE HUANCA PALLAGUCHI");
-            SelUnidad.addItem("DIEGO MENDEZ");
-            SelUnidad.addItem("BENIGNO BRITO ZUÑIGA");
-            SelUnidad.addItem("ANGEL ERMINIO SILVA OLIVO");
-            SelUnidad.addItem("ANTONIO ELIZALDE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN FRANCISCO DE SALES");
-            SelUnidad.addItem("UNIDAD EDUCATIVA FEDERICO GONZALEZ SUAREZ");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CIUDAD DE ALAUSÍ");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ISAIAS GARZÓN LOYOLA");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA NUDO DEL AZUAY");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MARISCAL ANTONIO JOSE DE SUCRE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE SOCTA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA GUASUNTOS");
-            SelUnidad.addItem("ANTONIO ANTE");
-            SelUnidad.addItem("MIGUEL DE LETAMENDI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ELOY ALFARO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MULTITUD");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SIBAMBE");
-            SelUnidad.addItem("JUAN FRANCISCO YEROVI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JAIME ROLDÓS AGUILERA");
-        }
-
-        if (sector==1){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA LEOPOLDO FREIRE");
-            SelUnidad.addItem("COLEGIO DE BACHILLERATO CHAMBO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CACIQUE ACHAMBA");
-        }
-
-        if (sector==2){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA CHUNCH");
-            SelUnidad.addItem("UNIDAD EDUCATIVA FISCOMISIONAL MARIA AUXILIADORA FE Y ALEGR");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MONTEVIDEO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMPUD");
-            SelUnidad.addItem("UNIDAD EDUCATIVA GONZOL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA QUITUMBE");
-        }
-
-        if (sector==3){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HERMEL TAYUPANDA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE JAIME ROLDOS A");
-            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE EDU");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HUALCO");
-            SelUnidad.addItem("CECIBEB ESTANISLAO ZAMBRANO");
-            SelUnidad.addItem("CECIBEB CARLOS ARTURO LEON");
-            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE EDU");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE DR. MA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE SAN GU");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE MARIA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÛE SANTIA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA TOMAS OLEAS");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CHACABAMBA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR JOSE MARIANO BORJA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA 28 DE AGOSTO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JUAN ADALBERTO ARAUJO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA GALAPAGOS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA 24 DE MAYO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA 10 DE AGOSTO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CICALPA");
-        }
-
-        if (sector==4){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA CORNELIO DAVALOS DONOSO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CHIMBORAZO PCEI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CELSO AUGUSTO RODRÍGUEZ");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MANUEL QUIROGA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CUMANDÁ");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MARISCAL SUCRE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SULTANA DE LOS ANDES");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA ANTONIO NARIÑO");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA REMIGIO CRESPO TORAL");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA OFELIA REYES CAJAS");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA 28 DE ENERO");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA LUZ MARÍA DONOSO");
-        }
-
-        if (sector==5){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ATAHU");
-            SelUnidad.addItem("CECIBEB PEDRO MONTERO");
-            SelUnidad.addItem("JHON F. KENNEDY");
-            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE RUMIÑ");
-            SelUnidad.addItem("MANUEL LASSO GUZÑAY");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ELOY A");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE COCISA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÛE BATALLA");
-            SelUnidad.addItem("SALVADOR BUSTAMANTE CELI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ACHUL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE DR. PO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE ÑUKAN");
-            SelUnidad.addItem("INTI RAYMI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE MARTH");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE 23 DE");
-            SelUnidad.addItem("CECIBEB ATAPO SANTA ELENA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE DANIE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HEROES");
-            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE NACION");
-            SelUnidad.addItem("16 DE MARZO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA VELASCO IBARRA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA 29 DE JUNIO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR EMILIO UZCATEGU");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA OBISPO PLAZA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO GUARDIANA DE LA LENGUA 27 DE F");
-            SelUnidad.addItem("UNIDAD EDUCATIVA 29 DE SEPTIEMBRE");
-            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
-        }
-
-        if (sector==6){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR ALFREDO PEREZ GUERRERO");
-            SelUnidad.addItem("JOSE MARIA VELAZ");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR GABRIEL GARCÍA MORENO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO GUANO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR MANUEL RODRIGUEZ OROZCO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ONCE DE NOVIEMBRE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN PABLO");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA BOLIVAR CHIRIBOGA BAQUERO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN ANDRES");
-            SelUnidad.addItem("UNIDAD EDUCATIVA TUNTATACTO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA BATZACÓN");
-            SelUnidad.addItem("UNIDAD EDUCATIVA FISCOMISIONAL JOSE MARIA VELAZ, SJ – IRFEYAL –");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN GERARDO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN ISIDRO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA RUMIÑAHUI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA JOSÉ ENRIQUE RODÓ");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA JOSÉ ANTONIO LIZARZABURU");
-        }
-
-        if (sector==7){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR GONZALO OLEAS ZAMBRANO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CARLOS MARIA DE LA CONDAMINE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PROVINCIA DE CHIMBORAZO");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA LUZ DE AMERICA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA EL TABERNACULO");
-        }
-
-        if (sector==8){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO PENIPE");
-            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA PRINCESA TOA");
-            SelUnidad.addItem("CARLOS MONTUFAR");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MANUEL ALVAREZ MENDEZ");
-        }
-
-        if (sector==9){
-            SelUnidad.removeAllItems();
-            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGUE MONSEÑOR LEONIDA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE CACHA DU");
-            SelUnidad.addItem("CECIBEB LIZARDO GARCIA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE SAN XAVI");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE 13 DE JUN");
-            SelUnidad.addItem("CONSOLATA 92");
-            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGÜE PCEI PACHAYACHACH");
-            SelUnidad.addItem("UNIDAD EDUCATIVA JEFFERSON");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DR NICANOR LARREA LEON");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR LEONIDAS GARCIA ORTIZ");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA GRAL JUAN LAVALLE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA NUESTRA SEÑORA DE FATIMA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA 21 DE ABRIL");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN FELIPE NERI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CAMILO GALLEGOS TOLEDO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI CHIMBORAZO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CAP EDMUNDO CHIRIBOGA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PENSIONADO OLIVO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA RIOBAMBA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CAPULLITOS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA VICENTE ANDA AGUIRRE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ONCE DE NOVIEMBRE");
-            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI LIBERTADOR");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LA PROVIDENCIA");
-            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI SAN PEDRO DE RIOBAMBA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BÁSICA SAN MATEO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CARLOS CISNEROS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA NUESTRO MUNDO ECO RIO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA JEAN PIAGET");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LICEO POLICIAL CHIMBORAZO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SANTA MARIANA DE JESUS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CRISTIANA NAZARENO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN FELIPE NERI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LEONARDO DA VINCI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA JUAN DE VELASCO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JESUS INFANTE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA JOSE MARIA ROMAN");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SEMILLITAS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA COMBATIENTES DE TAPI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MARTINIANO GUERRERO FREIRE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI CRUZADA SOCIAL");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN FRANCISCO DE ASIS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PEDRO VICENTE MALDONADO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LA SALLE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA INTERNACIONAL SAN IGNACIO DE LOYOLA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DE LAS AMERICAS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MIGUEL ANGEL LEON PONTON");
-            SelUnidad.addItem("UNIDAD EDUCATIVA EL DESPERTAR");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PENSIONADO AMERICANO INTERNATIONAL SCHO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR GERMAN ABDO TOUMA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA AMELIA GALLEGOS DIAZ");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MILTON REYES");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN VICENTE DE PAUL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA FERNANDO DAQUILEMA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MARIA AUXILIADORA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA THE BRITISH SCHOOL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LEONTIEV VIGOTSKY");
-            SelUnidad.addItem("UNIDAD EDUCATIVA FE Y ALEGRIA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA AMERICAN HIGH SCHOOL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ISABEL DE GODIN");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SANTO TOMAS APOSTOL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA INTERNACIONAL LICEO IBEROAMERICANO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA MERCEDES DE JESUS MOLINA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA YARUQUIES");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ADOLFO KOLPING");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA GARCIA MORENO");
-            SelUnidad.addItem("CENTRO DE EDUCACION INICIAL AMIGUITOS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SIMON RODRIGUEZ");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SHYRI I");
-            SelUnidad.addItem("UNIDAD EDUCATIVA VICTOR PROAÑO CARRION");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA ANDOAS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA 21 DE ABRIL");
-            SelUnidad.addItem("UNIDAD EDUCATIVA LICTO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JOSE MARIA VELAZ - LICTO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CACIQUE PINTAG");
-            SelUnidad.addItem("UNIDAD EDUCATIVA DANIEL LEON BORJA");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JAVIER SAENZ");
-            SelUnidad.addItem("DR. RICARDO DESCALZI");
-            SelUnidad.addItem("UNIDAD EDUCATIVA CONDORAZO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PURUHA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA RODRIGO BARRENO COBO");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA RICARDO ALFONSO DAVALOS VALDIV");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ESTADOS UNIDOS");
-            SelUnidad.addItem("UNIDAD EDUCATIVA SAN JUAN");
-            SelUnidad.addItem("UNIDAD EDUCATIVA NUEVO MUNDO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA BENITO JUAREZ");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA NIDIA JARAMILLO");
-            SelUnidad.addItem("UNIDAD EDUCATIVA HISPANOAMERICA");
-            SelUnidad.addItem("UNIDAD EDUCATIVA ANDES COLLEGE");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JOSE MARIA VELAZ");
-            SelUnidad.addItem("CENTRO DE EDUCACIÓN INICIAL SAFARI KIDS");
-            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN PABLO");
-            SelUnidad.addItem("CENTRO DE EDUCACIÓN INICIAL EUREKA KIDS");
-            SelUnidad.addItem("CENTRO DE EDUCACION INICIAL RIVER JUNIOR");
-            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI JOHANN HERBART");
-            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI EVEREST");
-        }
-    }//GEN-LAST:event_jSectorMouseClicked
-
-    private void SelUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelUnidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SelUnidadActionPerformed
+InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,SelUnidad,Selgrado,Selparal,residenciaSeleccionada,fechaFormateada);    }//GEN-LAST:event_jLabel11MouseClicked
  public static Date asDate(LocalDate localDate) {
     return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
   }
@@ -1182,6 +1149,7 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private javax.swing.JRadioButton Bmasc;
     private javax.swing.JRadioButton Brural;
     private javax.swing.JRadioButton Burbana;
+    private javax.swing.JLabel CitaProx;
     private javax.swing.JSpinner Daltura;
     private javax.swing.JSpinner Dpeso;
     private javax.swing.JPanel Header;
@@ -1190,6 +1158,7 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private javax.swing.JPanel Peduca;
     private javax.swing.JPanel Pinfgene;
     private javax.swing.JPanel Presul;
+    private javax.swing.JPanel ProxCita;
     private javax.swing.JSlider SLBMI;
     private javax.swing.JComboBox<String> SelUnidad;
     private javax.swing.JComboBox<String> Selgrado;
@@ -1204,6 +1173,7 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

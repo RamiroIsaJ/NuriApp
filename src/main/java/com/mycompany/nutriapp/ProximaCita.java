@@ -5,19 +5,28 @@
 package com.mycompany.nutriapp;
 
 import java.awt.Color;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
- * @author SYSTEMarket
+ * @author SebaAuca
  */
-public class Principal extends javax.swing.JFrame {
+public class ProximaCita extends javax.swing.JFrame {
 
     /**
-     * Creates new form DatosGenerales
+     * Creates new form ProximaCita
      */
-    int xMouse, yMouse;
-    public Principal() {
+    int xMouse;
+    int yMouse;
+    
+    public ProximaCita() {
         initComponents();
+        
+        
+
+        // Formatear la fecha en el formato deseado
+        
+        
     }
 
     /**
@@ -29,19 +38,17 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         jPanel1 = new javax.swing.JPanel();
-        Reg = new javax.swing.JPanel();
-        RegBoton = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        nombreapp = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        logoapp = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         cerrarbotn = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -49,85 +56,12 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        RegBoton.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        RegBoton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RegBoton.setText("Registro y Cálculo");
-        RegBoton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegBotonMouseClicked(evt);
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
             }
         });
-
-        javax.swing.GroupLayout RegLayout = new javax.swing.GroupLayout(Reg);
-        Reg.setLayout(RegLayout);
-        RegLayout.setHorizontalGroup(
-            RegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RegBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        RegLayout.setVerticalGroup(
-            RegLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RegLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RegBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(Reg, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 250, -1));
-
-        jLabel6.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Control de Citas");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel6)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel6)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 250, -1));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 250, -1));
-
-        nombreapp.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        nombreapp.setText("jLabel1");
-        jPanel1.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, -1, -1));
-
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 170, 230));
-
-        jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 190, 260));
-
-        logoapp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoapp.setText("jLabel4");
-        jPanel1.add(logoapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 80, 70));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Header.setBackground(new java.awt.Color(255, 255, 255));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -171,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
         );
         cerrarbotnLayout.setVerticalGroup(
             cerrarbotnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(exit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+            .addComponent(exit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
@@ -180,31 +114,77 @@ public class Principal extends javax.swing.JFrame {
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
                 .addComponent(cerrarbotn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(735, Short.MAX_VALUE))
+                .addContainerGap(495, Short.MAX_VALUE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cerrarbotn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 30));
+        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 30));
+
+        jLabel1.setFont(new java.awt.Font("RomanD", 0, 12)); // NOI18N
+        jLabel1.setText("de la próxima visita del paciente");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 260, 26));
+
+        jLabel2.setFont(new java.awt.Font("RomanD", 0, 12)); // NOI18N
+        jLabel2.setText("Seleccione la fecha tentativa");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 222, 26));
+
+        jLabel3.setFont(new java.awt.Font("RomanD", 0, 12)); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, 40));
+        jLabel3.getAccessibleContext().setAccessibleName("jLabel3");
+
+        jDateChooser1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooser1PropertyChange(evt);
+            }
+        });
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 250, 30));
+
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("RomanD", 0, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Guardar");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1MouseDragged
+
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_exitMouseClicked
 
     private void exitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseEntered
@@ -228,11 +208,16 @@ public class Principal extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
 
-    private void RegBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegBotonMouseClicked
-        PrimerasVariables objetoprim= new PrimerasVariables();
-           objetoprim.setVisible(true);
-           this.dispose();
-    }//GEN-LAST:event_RegBotonMouseClicked
+    private void jDateChooser1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser1PropertyChange
+        
+    }//GEN-LAST:event_jDateChooser1PropertyChange
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        Date fechaVisi = jDateChooser1.getDate();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaVisita = formatoFecha.format(fechaVisi);
+        jLabel3.setText(fechaVisita);
+    }//GEN-LAST:event_jPanel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -251,38 +236,35 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProximaCita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProximaCita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProximaCita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProximaCita.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new ProximaCita().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Header;
-    private javax.swing.JPanel Reg;
-    private javax.swing.JLabel RegBoton;
     private javax.swing.JPanel cerrarbotn;
     private javax.swing.JLabel exit;
+    private com.toedter.calendar.JCalendar jCalendar1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel logoapp;
-    private javax.swing.JLabel nombreapp;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
