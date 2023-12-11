@@ -45,6 +45,7 @@ public class PrimerasVariables extends javax.swing.JFrame {
     /**
      * Creates new form PrimerasVariables
      */
+    int sector, unidades;
     int xMouse, yMouse;
     String nombrePaciente;
     String direccionPaciente;
@@ -260,18 +261,6 @@ jLabel9.setText(fechaFormateada);
         jLabel5 = new javax.swing.JLabel();
         BMISL = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        Peduca = new javax.swing.JPanel();
-        txtunid = new javax.swing.JLabel();
-        SelUnidad = new javax.swing.JComboBox<>();
-        txtgrado = new javax.swing.JLabel();
-        txtparal = new javax.swing.JLabel();
-        Selgrado = new javax.swing.JComboBox<>();
-        Selparal = new javax.swing.JComboBox<>();
-        txtnameape = new javax.swing.JLabel();
-        INnombreape = new javax.swing.JTextField();
-        txtresiden = new javax.swing.JLabel();
-        Burbana = new javax.swing.JRadioButton();
-        Brural = new javax.swing.JRadioButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -281,6 +270,20 @@ jLabel9.setText(fechaFormateada);
         txtfvisit1 = new javax.swing.JLabel();
         INDireccion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        Peduca = new javax.swing.JPanel();
+        txtunid = new javax.swing.JLabel();
+        txtgrado = new javax.swing.JLabel();
+        txtparal = new javax.swing.JLabel();
+        Selgrado = new javax.swing.JComboBox<>();
+        Selparal = new javax.swing.JComboBox<>();
+        txtnameape = new javax.swing.JLabel();
+        INnombreape = new javax.swing.JTextField();
+        txtresiden = new javax.swing.JLabel();
+        Burbana = new javax.swing.JRadioButton();
+        Brural = new javax.swing.JRadioButton();
+        txtunid1 = new javax.swing.JLabel();
+        jSector = new javax.swing.JComboBox<>();
+        SelUnidad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -406,124 +409,7 @@ jLabel9.setText(fechaFormateada);
         jLabel10.setText("jLabel5");
         Presul.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
 
-        jPanel1.add(Presul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 760, 190));
-
-        Peduca.setBackground(new java.awt.Color(255, 255, 255));
-        Peduca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-
-        txtunid.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtunid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtunid.setText("Unidad Educativa");
-
-        SelUnidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        SelUnidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SelUnidadActionPerformed(evt);
-            }
-        });
-
-        txtgrado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtgrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtgrado.setText("Grado");
-
-        txtparal.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtparal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtparal.setText("Paralelo");
-
-        Selgrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        Selparal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        txtnameape.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtnameape.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtnameape.setText("Nombre y Apellidos");
-
-        INnombreape.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                INnombreapeActionPerformed(evt);
-            }
-        });
-
-        txtresiden.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtresiden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtresiden.setText("Residencia");
-
-        gruporesiden.add(Burbana);
-        Burbana.setText("Urbana");
-        Burbana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BurbanaActionPerformed(evt);
-            }
-        });
-
-        gruporesiden.add(Brural);
-        Brural.setText("Rural");
-
-        javax.swing.GroupLayout PeducaLayout = new javax.swing.GroupLayout(Peduca);
-        Peduca.setLayout(PeducaLayout);
-        PeducaLayout.setHorizontalGroup(
-            PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PeducaLayout.createSequentialGroup()
-                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PeducaLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(txtunid, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PeducaLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(INnombreape, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PeducaLayout.createSequentialGroup()
-                                .addComponent(Burbana, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(Brural, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(PeducaLayout.createSequentialGroup()
-                                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Selgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(PeducaLayout.createSequentialGroup()
-                                        .addGap(19, 19, 19)
-                                        .addComponent(txtgrado)))
-                                .addGap(26, 26, 26)
-                                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtparal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Selparal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(PeducaLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(txtresiden))
-                    .addGroup(PeducaLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(txtnameape, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-        PeducaLayout.setVerticalGroup(
-            PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PeducaLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(txtunid)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtgrado)
-                    .addComponent(txtparal))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Selgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Selparal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtnameape)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(INnombreape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtresiden, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Burbana)
-                    .addComponent(Brural))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(Peduca, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 220, 240));
+        jPanel1.add(Presul, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 770, 190));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
@@ -553,7 +439,7 @@ jLabel9.setText(fechaFormateada);
                 .addContainerGap(186, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 170, 240));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, 170, 240));
 
         Header.setBackground(new java.awt.Color(255, 255, 255));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -625,11 +511,145 @@ jLabel9.setText(fechaFormateada);
         jLabel9.setToolTipText("");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 140, 20));
 
+        Peduca.setBackground(new java.awt.Color(255, 255, 255));
+        Peduca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
+        txtunid.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtunid.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtunid.setText("Unidad Educativa");
+
+        txtgrado.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtgrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtgrado.setText("Grado");
+
+        txtparal.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtparal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtparal.setText("Paralelo");
+
+        Selgrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Primero EGB", "Segundo EGB", "Tercero EGB", "Cuarto EGB", "Quinto EGB", "Sexto EGB", "Séptimo EGB", "Octavo EGB", "Noveno EGB", "Décimo EGB", "Primero de Bachillerato", "Segundo de Bachillerato", "Tercero de Bachillerato" }));
+
+        Selparal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H" }));
+
+        txtnameape.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtnameape.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtnameape.setText("Nombre y Apellidos");
+
+        INnombreape.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                INnombreapeActionPerformed(evt);
+            }
+        });
+
+        txtresiden.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtresiden.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtresiden.setText("Residencia");
+
+        Burbana.setText("Urbana");
+        Burbana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BurbanaActionPerformed(evt);
+            }
+        });
+
+        Brural.setText("Rural");
+
+        txtunid1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtunid1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtunid1.setText("Sector");
+
+        jSector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALAUSI", "CHAMBO", "CHUNCHI", "COLTA", "CUMANDA", "GUAMOTE", "GUANO", "PALLATANGA", "PENIPE", "RIOBAMBA" }));
+        jSector.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSectorMouseClicked(evt);
+            }
+        });
+
+        SelUnidad.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        SelUnidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SelUnidadActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PeducaLayout = new javax.swing.GroupLayout(Peduca);
+        Peduca.setLayout(PeducaLayout);
+        PeducaLayout.setHorizontalGroup(
+            PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PeducaLayout.createSequentialGroup()
+                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PeducaLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PeducaLayout.createSequentialGroup()
+                                .addComponent(txtresiden)
+                                .addGap(41, 41, 41)
+                                .addComponent(Burbana, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Brural, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(PeducaLayout.createSequentialGroup()
+                                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtnameape, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtgrado)
+                                    .addComponent(Selgrado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtparal, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Selparal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(INnombreape)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PeducaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtunid, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PeducaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtunid1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSector, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(41, 41, 41))
+            .addGroup(PeducaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SelUnidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        PeducaLayout.setVerticalGroup(
+            PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PeducaLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtunid1)
+                    .addComponent(jSector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(txtunid)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtparal)
+                    .addComponent(txtgrado))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Selgrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Selparal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtnameape)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(INnombreape, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PeducaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtresiden, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Burbana)
+                    .addComponent(Brural))
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(Peduca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 430, 270));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -653,14 +673,6 @@ jLabel9.setText(fechaFormateada);
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_HeaderMousePressed
-
-    private void SelUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelUnidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SelUnidadActionPerformed
-
-    private void BurbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurbanaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BurbanaActionPerformed
 
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         System.exit(0);
@@ -832,6 +844,272 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private void INnombreapeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_INnombreapeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_INnombreapeActionPerformed
+
+    private void BurbanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BurbanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BurbanaActionPerformed
+
+    private void jSectorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSectorMouseClicked
+
+        sector = jSector.getSelectedIndex();
+
+        if (sector==0){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA NIZAG INDIGENA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGUE HUANCA PALLAGUCHI");
+            SelUnidad.addItem("DIEGO MENDEZ");
+            SelUnidad.addItem("BENIGNO BRITO ZUÑIGA");
+            SelUnidad.addItem("ANGEL ERMINIO SILVA OLIVO");
+            SelUnidad.addItem("ANTONIO ELIZALDE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN FRANCISCO DE SALES");
+            SelUnidad.addItem("UNIDAD EDUCATIVA FEDERICO GONZALEZ SUAREZ");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CIUDAD DE ALAUSÍ");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ISAIAS GARZÓN LOYOLA");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA NUDO DEL AZUAY");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MARISCAL ANTONIO JOSE DE SUCRE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE SOCTA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA GUASUNTOS");
+            SelUnidad.addItem("ANTONIO ANTE");
+            SelUnidad.addItem("MIGUEL DE LETAMENDI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ELOY ALFARO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MULTITUD");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SIBAMBE");
+            SelUnidad.addItem("JUAN FRANCISCO YEROVI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JAIME ROLDÓS AGUILERA");
+        }
+
+        if (sector==1){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA LEOPOLDO FREIRE");
+            SelUnidad.addItem("COLEGIO DE BACHILLERATO CHAMBO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CACIQUE ACHAMBA");
+        }
+
+        if (sector==2){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA CHUNCH");
+            SelUnidad.addItem("UNIDAD EDUCATIVA FISCOMISIONAL MARIA AUXILIADORA FE Y ALEGR");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MONTEVIDEO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMPUD");
+            SelUnidad.addItem("UNIDAD EDUCATIVA GONZOL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA QUITUMBE");
+        }
+
+        if (sector==3){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HERMEL TAYUPANDA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE JAIME ROLDOS A");
+            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE EDU");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HUALCO");
+            SelUnidad.addItem("CECIBEB ESTANISLAO ZAMBRANO");
+            SelUnidad.addItem("CECIBEB CARLOS ARTURO LEON");
+            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE EDU");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE DR. MA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE SAN GU");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE MARIA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÛE SANTIA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA TOMAS OLEAS");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CHACABAMBA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR JOSE MARIANO BORJA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA 28 DE AGOSTO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JUAN ADALBERTO ARAUJO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA GALAPAGOS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA 24 DE MAYO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA 10 DE AGOSTO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CICALPA");
+        }
+
+        if (sector==4){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA CORNELIO DAVALOS DONOSO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CHIMBORAZO PCEI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CELSO AUGUSTO RODRÍGUEZ");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MANUEL QUIROGA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CUMANDÁ");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA MARISCAL SUCRE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SULTANA DE LOS ANDES");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA ANTONIO NARIÑO");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA REMIGIO CRESPO TORAL");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA OFELIA REYES CAJAS");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA 28 DE ENERO");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA LUZ MARÍA DONOSO");
+        }
+
+        if (sector==5){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ATAHU");
+            SelUnidad.addItem("CECIBEB PEDRO MONTERO");
+            SelUnidad.addItem("JHON F. KENNEDY");
+            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE RUMIÑ");
+            SelUnidad.addItem("MANUEL LASSO GUZÑAY");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ELOY A");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE COCISA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÛE BATALLA");
+            SelUnidad.addItem("SALVADOR BUSTAMANTE CELI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE ACHUL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE DR. PO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGUE ÑUKAN");
+            SelUnidad.addItem("INTI RAYMI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE MARTH");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE 23 DE");
+            SelUnidad.addItem("CECIBEB ATAPO SANTA ELENA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE DANIE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE HEROES");
+            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMUNITARIA INTERCULTURAL BILINGÜE NACION");
+            SelUnidad.addItem("16 DE MARZO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA VELASCO IBARRA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA 29 DE JUNIO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR EMILIO UZCATEGU");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA OBISPO PLAZA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO GUARDIANA DE LA LENGUA 27 DE F");
+            SelUnidad.addItem("UNIDAD EDUCATIVA 29 DE SEPTIEMBRE");
+            SelUnidad.addItem("CENTRO EDUCATIVO COMUNITARIO INTERCULTURAL BILINGÜE DE ED");
+        }
+
+        if (sector==6){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR ALFREDO PEREZ GUERRERO");
+            SelUnidad.addItem("JOSE MARIA VELAZ");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR GABRIEL GARCÍA MORENO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO GUANO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR MANUEL RODRIGUEZ OROZCO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ONCE DE NOVIEMBRE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN PABLO");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA BOLIVAR CHIRIBOGA BAQUERO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN ANDRES");
+            SelUnidad.addItem("UNIDAD EDUCATIVA TUNTATACTO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA BATZACÓN");
+            SelUnidad.addItem("UNIDAD EDUCATIVA FISCOMISIONAL JOSE MARIA VELAZ, SJ – IRFEYAL –");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN GERARDO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN ISIDRO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA RUMIÑAHUI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA JOSÉ ENRIQUE RODÓ");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA JOSÉ ANTONIO LIZARZABURU");
+        }
+
+        if (sector==7){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR GONZALO OLEAS ZAMBRANO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CARLOS MARIA DE LA CONDAMINE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PROVINCIA DE CHIMBORAZO");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA LUZ DE AMERICA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA EL TABERNACULO");
+        }
+
+        if (sector==8){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA DEL MILENIO PENIPE");
+            SelUnidad.addItem("ESCUELA DE EDUCACIÓN BÁSICA PRINCESA TOA");
+            SelUnidad.addItem("CARLOS MONTUFAR");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MANUEL ALVAREZ MENDEZ");
+        }
+
+        if (sector==9){
+            SelUnidad.removeAllItems();
+            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGUE MONSEÑOR LEONIDA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE CACHA DU");
+            SelUnidad.addItem("CECIBEB LIZARDO GARCIA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE SAN XAVI");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA INTERCULTURAL BILINGUE 13 DE JUN");
+            SelUnidad.addItem("CONSOLATA 92");
+            SelUnidad.addItem("UNIDAD EDUCATIVA INTERCULTURAL BILINGÜE PCEI PACHAYACHACH");
+            SelUnidad.addItem("UNIDAD EDUCATIVA JEFFERSON");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DR NICANOR LARREA LEON");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR LEONIDAS GARCIA ORTIZ");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA GRAL JUAN LAVALLE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA NUESTRA SEÑORA DE FATIMA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA 21 DE ABRIL");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN FELIPE NERI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CAMILO GALLEGOS TOLEDO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI CHIMBORAZO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CAP EDMUNDO CHIRIBOGA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PENSIONADO OLIVO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA RIOBAMBA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CAPULLITOS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA VICENTE ANDA AGUIRRE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ONCE DE NOVIEMBRE");
+            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI LIBERTADOR");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LA PROVIDENCIA");
+            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI SAN PEDRO DE RIOBAMBA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BÁSICA SAN MATEO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CARLOS CISNEROS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA NUESTRO MUNDO ECO RIO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA JEAN PIAGET");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LICEO POLICIAL CHIMBORAZO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SANTA MARIANA DE JESUS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CRISTIANA NAZARENO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN FELIPE NERI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LEONARDO DA VINCI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA JUAN DE VELASCO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JESUS INFANTE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA JOSE MARIA ROMAN");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SEMILLITAS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA COMBATIENTES DE TAPI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MARTINIANO GUERRERO FREIRE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI CRUZADA SOCIAL");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN FRANCISCO DE ASIS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PEDRO VICENTE MALDONADO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LA SALLE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA INTERNACIONAL SAN IGNACIO DE LOYOLA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DE LAS AMERICAS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MIGUEL ANGEL LEON PONTON");
+            SelUnidad.addItem("UNIDAD EDUCATIVA EL DESPERTAR");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PENSIONADO AMERICANO INTERNATIONAL SCHO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA DR GERMAN ABDO TOUMA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA AMELIA GALLEGOS DIAZ");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MILTON REYES");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN VICENTE DE PAUL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA FERNANDO DAQUILEMA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MARIA AUXILIADORA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA THE BRITISH SCHOOL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LEONTIEV VIGOTSKY");
+            SelUnidad.addItem("UNIDAD EDUCATIVA FE Y ALEGRIA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA AMERICAN HIGH SCHOOL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ISABEL DE GODIN");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SANTO TOMAS APOSTOL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA INTERNACIONAL LICEO IBEROAMERICANO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA MERCEDES DE JESUS MOLINA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA YARUQUIES");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ADOLFO KOLPING");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA GARCIA MORENO");
+            SelUnidad.addItem("CENTRO DE EDUCACION INICIAL AMIGUITOS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SIMON RODRIGUEZ");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SHYRI I");
+            SelUnidad.addItem("UNIDAD EDUCATIVA VICTOR PROAÑO CARRION");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA ANDOAS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA 21 DE ABRIL");
+            SelUnidad.addItem("UNIDAD EDUCATIVA LICTO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JOSE MARIA VELAZ - LICTO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA CACIQUE PINTAG");
+            SelUnidad.addItem("UNIDAD EDUCATIVA DANIEL LEON BORJA");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA JAVIER SAENZ");
+            SelUnidad.addItem("DR. RICARDO DESCALZI");
+            SelUnidad.addItem("UNIDAD EDUCATIVA CONDORAZO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PURUHA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA RODRIGO BARRENO COBO");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA RICARDO ALFONSO DAVALOS VALDIV");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ESTADOS UNIDOS");
+            SelUnidad.addItem("UNIDAD EDUCATIVA SAN JUAN");
+            SelUnidad.addItem("UNIDAD EDUCATIVA NUEVO MUNDO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA BENITO JUAREZ");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA NIDIA JARAMILLO");
+            SelUnidad.addItem("UNIDAD EDUCATIVA HISPANOAMERICA");
+            SelUnidad.addItem("UNIDAD EDUCATIVA ANDES COLLEGE");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI JOSE MARIA VELAZ");
+            SelUnidad.addItem("CENTRO DE EDUCACIÓN INICIAL SAFARI KIDS");
+            SelUnidad.addItem("ESCUELA DE EDUCACION BASICA SAN PABLO");
+            SelUnidad.addItem("CENTRO DE EDUCACIÓN INICIAL EUREKA KIDS");
+            SelUnidad.addItem("CENTRO DE EDUCACION INICIAL RIVER JUNIOR");
+            SelUnidad.addItem("COLEGIO DE BACHILLERATO PCEI JOHANN HERBART");
+            SelUnidad.addItem("UNIDAD EDUCATIVA PCEI EVEREST");
+        }
+    }//GEN-LAST:event_jSectorMouseClicked
+
+    private void SelUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelUnidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SelUnidadActionPerformed
  public static Date asDate(LocalDate localDate) {
     return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
   }
@@ -938,6 +1216,7 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JComboBox<String> jSector;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider3;
     private javax.swing.JLabel txtaltura;
@@ -952,5 +1231,6 @@ InsertarDatosPaci(INnombreape,INDireccion,generoSeleccionado,fechaSeleccionada,S
     private javax.swing.JLabel txtpeso;
     private javax.swing.JLabel txtresiden;
     private javax.swing.JLabel txtunid;
+    private javax.swing.JLabel txtunid1;
     // End of variables declaration//GEN-END:variables
 }
