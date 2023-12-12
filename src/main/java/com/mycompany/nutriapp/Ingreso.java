@@ -124,13 +124,10 @@ public class Ingreso extends javax.swing.JFrame {
 
         nombreapp.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         nombreapp.setText("jLabel2");
-        fondo.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, -1, -1));
+        fondo.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, -1, -1));
 
-        fondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\SYSTEMarket\\OneDrive - Universidad Técnica Particular de Loja - UTPL\\Documentos\\NetBeansProjects\\NutriApp\\src\\main\\java\\com\\images\\fondo2.png")); // NOI18N
         fondo2.setText("jLabel1");
         fondo.add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 210, -1));
-
-        logoemb.setIcon(new javax.swing.ImageIcon("C:\\Users\\SYSTEMarket\\OneDrive - Universidad Técnica Particular de Loja - UTPL\\Escritorio\\PROYECTO NUTRICION\\EMBS Logo.png")); // NOI18N
         fondo.add(logoemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 250, 70));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
@@ -278,15 +275,12 @@ public class Ingreso extends javax.swing.JFrame {
 
         fondo.add(botoningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 160, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SYSTEMarket\\OneDrive - Universidad Técnica Particular de Loja - UTPL\\Escritorio\\PROYECTO NUTRICION\\FIE.png")); // NOI18N
         jLabel1.setText("jLabel1");
         fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 201, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\SYSTEMarket\\OneDrive - Universidad Técnica Particular de Loja - UTPL\\Escritorio\\PROYECTO NUTRICION\\SALUDPUBLICA.png")); // NOI18N
         jLabel3.setText("jLabel1");
         fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 80, 80));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\SYSTEMarket\\OneDrive - Universidad Técnica Particular de Loja - UTPL\\Escritorio\\PROYECTO NUTRICION\\ESPOCH.png")); // NOI18N
         jLabel2.setText("jLabel1");
         fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 80, -1));
 

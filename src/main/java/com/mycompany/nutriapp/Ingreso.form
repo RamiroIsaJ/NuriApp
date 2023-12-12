@@ -67,15 +67,12 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="670" y="210" width="-1" height="-1"/>
+              <AbsoluteConstraints x="750" y="220" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="fondo2">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SYSTEMarket\OneDrive - Universidad T&#xe9;cnica Particular de Loja - UTPL\Documentos\NetBeansProjects\NutriApp\src\main\java\com\images\fondo2.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Constraints>
@@ -85,11 +82,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="logoemb">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SYSTEMarket\OneDrive - Universidad T&#xe9;cnica Particular de Loja - UTPL\Escritorio\PROYECTO NUTRICION\EMBS Logo.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="120" y="400" width="250" height="70"/>
@@ -346,9 +338,6 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SYSTEMarket\OneDrive - Universidad T&#xe9;cnica Particular de Loja - UTPL\Escritorio\PROYECTO NUTRICION\FIE.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Constraints>
@@ -359,9 +348,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SYSTEMarket\OneDrive - Universidad T&#xe9;cnica Particular de Loja - UTPL\Escritorio\PROYECTO NUTRICION\SALUDPUBLICA.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Constraints>
@@ -372,9 +358,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\SYSTEMarket\OneDrive - Universidad T&#xe9;cnica Particular de Loja - UTPL\Escritorio\PROYECTO NUTRICION\ESPOCH.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
           <Constraints>
