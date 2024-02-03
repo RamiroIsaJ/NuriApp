@@ -5,6 +5,9 @@
 package com.mycompany.nutriapp;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +21,21 @@ public class Principal extends javax.swing.JFrame {
     int xMouse, yMouse;
     public Principal() {
         initComponents();
+        
+       ImageIcon logoap2= new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/LOGOAPP.png")));
+       Image img1=logoap2.getImage();
+       Image img2=img1.getScaledInstance(logoapp.getWidth(),logoapp.getHeight(),Image.SCALE_SMOOTH);
+       ImageIcon i=new ImageIcon(img2);
+       logoapp.setIcon(i);
+       
+       ImageIcon logoembs2= new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/LogoEMBS.png")));
+       Image img3=logoembs2.getImage();
+       Image img4=img3.getScaledInstance(logoembs.getWidth(),logoembs.getHeight(),Image.SCALE_SMOOTH);
+       ImageIcon i2=new ImageIcon(img4);
+       logoembs.setIcon(i2);
+       
+       fondo.setIcon(new ImageIcon(getClass().getResource("/imagenes/fondo.png")));
+
     }
 
     /**
@@ -33,16 +51,16 @@ public class Principal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         RegBoton = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        Citas = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        nombreapp = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Recomendaciones = new javax.swing.JLabel();
+        logoembs = new javax.swing.JLabel();
         logoapp = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         cerrarbotn = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
+        NAME = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -72,73 +90,70 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RegBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(RegBoton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 250, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 250, -1));
 
-        jLabel7.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Control de Citas");
+        Citas.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        Citas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Citas.setText("Control de Citas");
+        Citas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CitasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel7)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Citas, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel7)
-                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(Citas, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 250, 90));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 250, 90));
 
-        jLabel6.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Recomendaciones");
+        Recomendaciones.setFont(new java.awt.Font("Roboto Thin", 1, 18)); // NOI18N
+        Recomendaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Recomendaciones.setText("Recomendaciones");
+        Recomendaciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RecomendacionesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel6)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Recomendaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel6)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Recomendaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 250, 90));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 250, 90));
 
-        nombreapp.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        nombreapp.setText("jLabel1");
-        jPanel1.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
-
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 170, 230));
-
-        jLabel3.setText("jLabel3");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 190, 260));
+        logoembs.setText("jLabel2");
+        jPanel1.add(logoembs, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 220, 120));
 
         logoapp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logoapp.setText("jLabel4");
-        jPanel1.add(logoapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 80, 70));
+        jPanel1.add(logoapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 190, 180));
 
         Header.setBackground(new java.awt.Color(255, 255, 255));
         Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -200,6 +215,15 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 30));
 
+        NAME.setFont(new java.awt.Font("RomanD", 1, 18)); // NOI18N
+        NAME.setText("NOMBRE DE LA APP");
+        NAME.setToolTipText("");
+        jPanel1.add(NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 250, 40));
+
+        fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fondo.setText("jLabel1");
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 480));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -245,6 +269,18 @@ public class Principal extends javax.swing.JFrame {
            this.dispose();
     }//GEN-LAST:event_RegBotonMouseClicked
 
+    private void CitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CitasMouseClicked
+        ControlCi objetosegun= new ControlCi();
+           objetosegun.setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_CitasMouseClicked
+
+    private void RecomendacionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecomendacionesMouseClicked
+        Recomendaciones objetoter= new Recomendaciones();
+           objetoter.setVisible(true);
+           this.dispose();
+    }//GEN-LAST:event_RecomendacionesMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -282,19 +318,19 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Citas;
     private javax.swing.JPanel Header;
+    private javax.swing.JLabel NAME;
+    private javax.swing.JLabel Recomendaciones;
     private javax.swing.JLabel RegBoton;
     private javax.swing.JPanel cerrarbotn;
     private javax.swing.JLabel exit;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel fondo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel logoapp;
-    private javax.swing.JLabel nombreapp;
+    private javax.swing.JLabel logoembs;
     // End of variables declaration//GEN-END:variables
 }
