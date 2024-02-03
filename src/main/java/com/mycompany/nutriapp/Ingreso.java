@@ -6,6 +6,8 @@ package com.mycompany.nutriapp;
 
 import Clases.CConexion;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.net.URL;
 import java.sql.CallableStatement;
 import javax.swing.ImageIcon;
@@ -75,6 +77,18 @@ public class Ingreso extends javax.swing.JFrame {
     
     public Ingreso() {
         initComponents();
+       ImageIcon logoap= new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/LOGOAPP.png")));
+       Image img1=logoap.getImage();
+       Image img2=img1.getScaledInstance(nombreapp.getWidth(),nombreapp.getHeight(),Image.SCALE_SMOOTH);
+       ImageIcon i=new ImageIcon(img2);
+       nombreapp.setIcon(i);
+
+       logo.setIcon(new ImageIcon(getClass().getResource("/imagenes/fondo2.png")));
+       SALUD.setIcon(new ImageIcon(getClass().getResource("/imagenes/SALUDPUBLICA.png")));
+       FIE.setIcon(new ImageIcon(getClass().getResource("/imagenes/FIE.png")));
+       logoemb1.setIcon(new ImageIcon(getClass().getResource("/imagenes/EMBSLogo.png")));
+       ESPOCH.setIcon(new ImageIcon(getClass().getResource("/imagenes/ESPOCH.png")));
+
        
     }
 
@@ -88,13 +102,13 @@ public class Ingreso extends javax.swing.JFrame {
     private void initComponents() {
 
         fondo = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
         nombreapp = new javax.swing.JLabel();
-        fondo2 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         logoemb = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         cerrarbotn = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
+        NAME = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
         usuario = new javax.swing.JLabel();
         txtuser = new javax.swing.JTextField();
@@ -104,11 +118,12 @@ public class Ingreso extends javax.swing.JFrame {
         txtclave = new javax.swing.JPasswordField();
         botoningresar = new javax.swing.JPanel();
         textoingresar = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        FIE = new javax.swing.JLabel();
         botonregistrar1 = new javax.swing.JPanel();
         textoregistrar1 = new javax.swing.JLabel();
+        logoemb1 = new javax.swing.JLabel();
+        ESPOCH = new javax.swing.JLabel();
+        SALUD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -118,17 +133,14 @@ public class Ingreso extends javax.swing.JFrame {
         fondo.setBackground(new java.awt.Color(255, 255, 255));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setText("jLabel1");
-        fondo.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 100, 80));
-
         nombreapp.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         nombreapp.setText("jLabel2");
-        fondo.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, -1, -1));
+        fondo.add(nombreapp, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, 170, 170));
 
-        fondo2.setText("jLabel1");
-        fondo.add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 210, -1));
-        fondo.add(logoemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 250, 70));
+        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logo.setText("jLabel1");
+        fondo.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 200, 480));
+        fondo.add(logoemb, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 250, 70));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -177,17 +189,27 @@ public class Ingreso extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        NAME.setFont(new java.awt.Font("RomanD", 1, 18)); // NOI18N
+        NAME.setText("NOMBRE DE LA APP");
+        NAME.setToolTipText("");
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerLayout.createSequentialGroup()
                 .addComponent(cerrarbotn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(751, Short.MAX_VALUE))
+                .addGap(108, 108, 108)
+                .addComponent(NAME, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cerrarbotn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NAME, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         fondo.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
@@ -275,14 +297,8 @@ public class Ingreso extends javax.swing.JFrame {
 
         fondo.add(botoningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 160, 50));
 
-        jLabel1.setText("jLabel1");
-        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 201, 70));
-
-        jLabel3.setText("jLabel1");
-        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 80, 80));
-
-        jLabel2.setText("jLabel1");
-        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 80, -1));
+        FIE.setText("jLabel1");
+        fondo.add(FIE, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 110, 50));
 
         botonregistrar1.setBackground(new java.awt.Color(125, 175, 132));
         botonregistrar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -321,16 +337,23 @@ public class Ingreso extends javax.swing.JFrame {
         );
 
         fondo.add(botonregistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, -1, -1));
+        fondo.add(logoemb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 250, 70));
+
+        ESPOCH.setText("jLabel1");
+        fondo.add(ESPOCH, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, 70));
+
+        SALUD.setText("jLabel1");
+        fondo.add(SALUD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 80, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -452,21 +475,22 @@ if (String.valueOf(txtclave.getPassword()).equals("********")) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ESPOCH;
+    private javax.swing.JLabel FIE;
+    private javax.swing.JLabel NAME;
+    private javax.swing.JLabel SALUD;
     private javax.swing.JPanel botoningresar;
     private javax.swing.JPanel botonregistrar1;
     private javax.swing.JPanel cerrarbotn;
     private javax.swing.JLabel clave;
     private javax.swing.JLabel exit;
     private javax.swing.JPanel fondo;
-    private javax.swing.JLabel fondo2;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel logoemb;
+    private javax.swing.JLabel logoemb1;
     private javax.swing.JLabel nombreapp;
     private javax.swing.JLabel textoingresar;
     private javax.swing.JLabel textoregistrar1;
